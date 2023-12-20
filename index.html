@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Encode+Sans:wght@100;200&family=Lato&family=Lobster&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .nav {
+            background-color: rgb(248, 231, 248);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        li {
+            list-style-type: none;
+            padding: 20px;
+        }
+
+        .menu_list {
+            display: flex;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: rgb(244, 82, 136);
+        }
+
+        a::after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background-color: rgb(244, 82, 136);
+            display: block;
+
+            transition: all 3s;
+
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        .Service {
+            position: relative;
+        }
+
+        .Service:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown {
+            display: none;
+            width: 200px;
+            position: absolute;
+            background-color: rgba(245, 104, 151, 0.655);
+            top: 70px;
+            right: -60px;
+        }
+
+        .fa-bars {
+            display: none;
+        }
+
+        input {
+            display: none;
+        }
+
+        .all_cat {
+            display: none;
+        }
+
+        .fa-plus {
+            display: none;
+        }
+
+        .fa-heart {
+            margin-left: 20px;
+        }
+
+        .fa-circle-user {
+            margin-left: 20px;
+        }
+
+        .div2 {
+            width: 100%;
+            height: 450px;
+            gap: 30px;
+            margin-top: 30px;
+            display: flex;
+
+        }
+
+        .Surprise_text {
+            padding: 40px 142px;
+            font-family: 'Lato', sans-serif;
+        }
+
+
+        .start_img1 {
+            border-radius: 30px;
+        }
+        .start_img2 {
+            border-radius: 30px;
+        }
+
+        .start_img3 {
+            border-radius: 30px;
+        }
+
+
+        .hr_div::after {
+            content: "";
+            width: 80%;
+            margin-left: 10%;
+            height: 1px;
+            background-color: rgb(223, 219, 221);
+            display: block;
+        }
+
+        .div_3 {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 0px 10%;
+            border-radius: 10px;
+
+        }
+
+        .cake_cat {
+            width: 25%;
+            height: 300px;
+            background-color: white;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+        }
+
+        .mean_div_4 {
+            width: 100%;
+            height: 500px;
+            background-color: rgb(255, 231, 235);
+        }
+
+        .div_4 {
+            width: 80%;
+            height: 500px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-left: 10%;
+
+        }
+
+        .text_but {
+            width: 100%;
+            height: 150px;
+            background-color: rgb(255, 231, 235);
+            display: flex;
+            justify-content: space-between;
+        }
+        .text_but {
+            width: 100%;
+            height: 150px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mob_text_but {
+            display: none;
+        }
+        .mob_text_but_mob{
+            display: none;
+        }
+
+        .viewall_btn {
+            width: 120px;
+            height: 40px;
+            margin-right: 80px;
+            border: 1px solid palevioletred;
+            background-color: white;
+            border-radius: 20px;
+            margin-top: 40px;
+            color: rgb(246, 98, 147);
+            font-weight: bold;
+
+        }
+
+        .our_cat {
+            width: 25%;
+            height: 350px;
+            background-color: white;
+            border: 10px solid white;
+            border-radius: 10px;
+        }
+
+        .fa-star {
+            font-size: 10px;
+        }
+
+        .mob_flavour_div {
+            display: none;
+        }
+
+        .Web_flavour_div {
+            display: block;
+        }
+
+        .mob_flavour_div {
+            display: none;
+        }
+
+
+        .flours_Mean_div {
+            width: 80%;
+            height: 100px;
+            background-color: white;
+            margin-left: 10%;
+            display: grid;
+            grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10%;
+            grid-template-rows: auto;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .flours_div_box {
+            height: 50px;
+            border: 1px solid gray;
+            border-radius: 10px;
+
+
+        }
+
+        .mean_trend_webdiv1 {
+            width: 100%;
+            height: 900px;
+            background-color:  rgb(250, 250, 245);
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            justify-content: center;
+
+
+        }
+
+        .trend_div {
+            height: 500px;
+            margin-top: 30px;
+            border-radius: 20px;
+
+        }
+
+        .trend_img {
+            border-radius: 5px;
+        }
+
+        .mean_trend_webdiv2 {
+            width: 100%;
+            height: 300px;
+            background-color: rgb(250, 250, 245);
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            grid-template-columns: 50% 50%;
+            position: absolute;
+            margin-top: 500px;
+
+
+
+        }
+
+        .mean_trend_mobdiv1 {
+            display: none;
+        }
+        .designer_div_web{
+            width: 100%;
+            height: 900px;
+            
+            display: grid;
+            grid-template-columns: 25% 25% 25%;
+            justify-content: space-evenly;
+          
+            gap: 20px;
+        }
+        .designer_cakebox{
+            height: 400px;
+           border: 1px solid rgb(221, 223, 226);
+           border-radius: 10px;
+        }
+
+.trend_mob_Surprise{
+    display: none;
+}
+img{
+    border-radius: 10px 10px 0px 0px;
+}
+.contact_div{
+    width: 100%;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+}
+
+        @media (max-width:400px) {
+            .menu_list {
+                display: none;
+
+            }
+
+            input:checked~.menu_list {
+                display: block;
+                position: absolute;
+                top: 1px;
+                width: 70%;
+                background-color: rgba(245, 104, 151, 0.958);
+            }
+
+            .all_cat {
+                display: block;
+
+            }
+
+            .div2 {
+                display: none;
+            }
+
+            a::after {
+
+                background-color: rgb(235, 226, 229);
+            }
+
+            a:hover::after {
+                width: 25%;
+            }
+
+            .Service {
+                position: relative;
+            }
+
+            .Service:hover .dropdown {
+                display: block;
+            }
+
+            li {
+                border-bottom: 1px solid rgb(166, 165, 165);
+            }
+
+            .fa-xmark {
+                margin-left: 122px;
+            }
+
+            .fa-plus {
+                display: block;
+                margin-left: 210px;
+            }
+
+            .fa-bars {
+                display: block;
+                padding: 30px;
+            }
+
+            a:hover {
+                color: white;
+            }
+
+            .dropdown {
+                display: none;
+                width: 280px;
+                position: absolute;
+                background-color: rgba(245, 104, 151, 0.462);
+                top: 70px;
+
+                left: 1px;
+            }
+
+            .Surprise_text {
+                padding: 0px 0px;
+            }
+
+            .div2 {
+                width: 100%;
+
+
+            }
+
+            .mob_start_img1 {
+                display: none;
+            }
+
+            .mob_start_img2 {
+                display: none;
+
+            }
+
+            .mob_start_img3 {
+                width: 80%;
+                margin-left: 10%;
+
+            }
+
+            .Surprise_text {
+                padding: 30px 30px;
+                font-size: 25px;
+            }
+
+            .div_3 {
+                width: 80%;
+                display: block;
+                display: grid;
+                grid-template-columns: 50% 50%;
+                margin-left: 7%;
+                padding: 0px 0%;
+                border-radius: 10px;
+            }
+
+            .cake_cat {
+                width: 100%;
+                height: 300px;
+                background-color: white;
+                border: 1px solid lightgray;
+                border-radius: 10px;
+                margin-top: 0px;
+            }
+
+            .mean_div_4 {
+                display: none;
+            }
+
+            .text_but {
+                display: none;
+            }
+
+            .mob_text_but {
+                width: 100%;
+                height: 130px;
+                background-color: rgb(249, 219, 224);
+                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .mob_text_but_mob {
+                width: 100%;
+                height: 130px;
+                background-color:white;
+                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .our_text {
+                margin-left: 20px;
+                font-family: 'Lato', sans-serif;
+            }
+
+            .viewall_btn {
+                width: 120px;
+                height: 40px;
+                margin-right: 20px;
+                border: 1px solid palevioletred;
+                background-color: white;
+                border-radius: 20px;
+                margin-top: 0px;
+                color: rgb(246, 98, 147);
+                font-weight: bold;
+
+            }
+
+            .mob_flavour_div {
+                width: 100%;
+                height: 400px;
+                display: block;
+            }
+
+            .flours_Mean_div {
+                width: 80%;
+                height: 300px;
+                background-color: white;
+                margin-left: 10%;
+                display: grid;
+                grid-template-columns: 40% 40%;
+                grid-template-rows: auto;
+                gap: 20px;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .flours_div_box {
+                height: 50px;
+                border: 1px solid gray;
+                border-radius: 10px;
+
+
+            }
+
+            .Web_flavour_div {
+                display: none;
+            }
+
+            .mean_trend_webdiv1 {
+                display: none;
+            }
+
+            .mean_trend_mobdiv1 {
+                width: 100%;
+                background-color: rgb(250, 250, 245);
+                display: block;
+                display: grid;
+                grid-template-columns: 40% 40%;
+                justify-content: center;
+                gap: 20px;
+
+            }
+
+            .trend_mob_div {
+                height: 220px;
+
+            }
+            .trend_mob_Surprise{
+                display: block;
+              padding: 30px ;
+              background-color: rgb(250, 250, 245);
+            }
+            .designer_div_web{
+            width: 100%;
+            height: 00px;
+            
+            display: grid;
+            grid-template-columns: 25% 25% 25%;
+            justify-content: space-evenly;
+          
+            gap: 20px;
+        }
+        .designer_cakebox{
+            height: 150px;
+           border: 1px solid rgb(221, 223, 226);
+           border-radius: 10px;
+        }
+        .designer_img{
+           height: 110px;
+        }
+        .contact_div{
+            display: none;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+
+        <div style="margin-left: 40px;">
+            <img src="img/logo_cake.png" width="80px" alt="">
+        </div>
+
+        <input type="checkbox" name="" id="menu_check">
+        <label for="menu_check"><i class="fa-solid fa-bars"></i></label>
+
+
+        <ul class="menu_list">
+            <li><a class="all_cat" href="">
+                    <b>All Category</b><i class="fa-solid fa-xmark"></i></a>
+            </li>
+            <li><a class="menu" href="">Home<i class="fa-solid fa-plus"></i></a></li>
+            <li><a class="menu" href="">About<i class="fa-solid fa-plus"></i></a></li>
+            <li class="Service"><a href="">Services <input class="plus_check" type="checkbox" name="" id="plus_service">
+                    <label for="plus_service"><i class="fa-solid fa-plus"></i></label></a>
+
+                <ul class="dropdown">
+                    <li style=" border-bottom: 1px solid rgb(166, 165, 165);">
+                        <a href="">Fullstack devloper</a>
+                    </li>
+                    <li style=" border-bottom: 1px solid rgb(166, 165, 165);">
+                        <a href="">Frontend devloper</a>
+                    </li>
+                    <li style=" border-bottom: 1px solid rgb(166, 165, 165);">
+                        <a href="">Backend devloper</a>
+                    </li>
+                    <li style=" border-bottom: 1px solid rgb(166, 165, 165);">
+                        <a href="">Web devloper</a>
+                    </li>
+                </ul>
+
+            </li>
+            <li><a class="menu" href="">Contact<i class="fa-solid fa-plus"></i></a></li>
+            <div style="padding: 20px;margin-right: 60px;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-circle-user"></i>
+            </div>
+        </ul>
+    </div>
+
+    <div class="div2">
+        <div class="mob_start_img1">
+            <img class="start_img1"
+                src="https://images.pexels.com/photos/302552/pexels-photo-302552.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                width="100%" height="400px" alt="">
+            <div style="position: absolute;top: 130px;padding: 20PX;">
+                <h1 style="font-size: 80px;color: rgb(255, 254, 254);">Gourmet</h1>
+                <span style="font-size: 20px;color: rgb(255, 254, 254);"><b>CAKES</b></span>
+            </div>
+        </div>
+
+        <div class="mob_start_img2">
+            <img class="start_img2" src="https://images.pexels.com/photos/433527/pexels-photo-433527.jpeg  "
+                width="100%" height="400px" alt="">
+            <div style="position: absolute;top: 130px;padding: 20PX;">
+                <h1 style="font-size: 80px;color: rgb(255, 254, 254);">Annivesary</h1>
+                <span style="font-size: 20px;color: rgb(255, 254, 254);"><b>CAKES</b></span>
+            </div>
+        </div>
+
+        <div class="mob_start_img3">
+            <img class="start_img3"
+                src=" https://images.pexels.com/photos/7096659/pexels-photo-7096659.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                width="100%" height="400px" alt="">
+            <div style="position: absolute;top: 130px;padding: 20PX;">
+                <span style="font-size: 20px;color: rgb(255, 254, 254);"><b>MAKE A</b></span>
+                <h1 style="font-size: 80px;color: rgb(255, 254, 254);">Wish</h1>
+                <span style="font-size: 20px;color: rgb(255, 254, 254);"><b>& INDULGE</b></span>
+            </div>
+        </div>
+    </div>
+
+    <span class="hr_div"></span>
+
+
+    <h1 class="Surprise_text">Surprise Your Special One</h1>
+
+    <div class="div_3">
+
+        <div class="cake_cat">
+            <img src="img/cake3.jpg" width="100%" height="250px;" alt="">
+            <h5 style="text-align: center;margin-top: 10px;font-family: 'Lato', sans-serif;">Regular Cakes</h5>
+
+        </div>
+        <div class="cake_cat">
+            <img src="img/cake2.jpeg" width="100%" height="250px;" alt="">
+            <h5 style="text-align: center;margin-top: 10px;font-family: 'Lato', sans-serif;">Gourmet Cakes</h5>
+
+        </div>
+        <div class="cake_cat">
+            <img src="img/cake5.webp" width="100%" height="250px" alt="">
+            <h5 style="text-align: center;margin-top: 10px;font-family: 'Lato', sans-serif;">Photo Cakes</h5>
+
+        </div>
+        <div class="cake_cat">
+            <img src="img/cake1.jpeg" width="100%" height="250px" alt="">
+            <h5 style="text-align: center;margin-top: 10px;font-family: 'Lato', sans-serif;">Theme Cakes</h5>
+        </div>
+    </div>
+    <br><br><br>
+
+
+
+
+    <div class="text_but">
+        <h1 class="Surprise_text">Our Best Sellers</h1>
+        <button class="viewall_btn">View All</button>
+    </div>
+    <div class="mob_text_but">
+        <h3 class="our_text">Our Best Sellers</h3>
+        <button class="viewall_btn">View All</button>
+    </div>
+
+    <div class="mob_flavour_div">
+        <h3 style="padding: 30px 30px;">Experience Floavours</h3>
+        <div class="flours_Mean_div">
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Chocalate</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Fruits</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Red velvet</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Mango</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Blackforest</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Pineapple</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Butterscotch</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Kit Kat</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="mean_div_4">
+        <div class="div_4">
+            <div class="our_cat">
+                <img src="img/cake1.jpeg" width="100%" height="250px" alt="">
+                <h5 style="margin-top: 10px;font-family: 'Lato', sans-serif;">Classic Chocalate Truffle Cakes</h5>
+                <span><b>₹ 549</b> <del style="font-size: 12px;color: gray;">₹ 599</del><span style="color: green;"> (9%
+                        OFF)</span></span>
+                <div
+                    style="width: 20%;height: 25px;background-color: rgb(237, 236, 236);color: green;text-align: center;margin-top: 10px;">
+                    <span>4.9</span>
+                    <i class="fas fa-star"></i>
+                </div>
+
+
+            </div>
+            <div class="our_cat">
+                <img src="img/cake1.jpeg" width="100%" height="250px" alt="">
+                <h5 style="margin-top: 10px;font-family: 'Lato', sans-serif;">Butterscotch Cherry Topped Cake</h5>
+                <span><b>₹ 499</b> <del style="font-size: 12px;color: gray;">₹ 599</del><span style="color: green;">(10%
+                        OFF)</span></span>
+                <div
+                    style="width: 20%;height: 25px;background-color: rgb(237, 236, 236);color: green;text-align: center;margin-top: 10px;">
+                    <span>4.9</span>
+                    <i class="fas fa-star"></i>
+                </div>
+
+            </div>
+            <div class="our_cat">
+                <img src="img/cake1.jpeg" width="100%" height="250px" alt="">
+                <h5 style="margin-top: 10px;font-family: 'Lato', sans-serif;">Belgian Chocalate Cake</h5>
+                <span><b>₹ 749</b></span>
+                <div
+                    style="width: 20%;height: 25px;background-color: rgb(237, 236, 236);color: green;text-align: center;margin-top: 10px;">
+                    <span>4.9</span>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="our_cat">
+                <img src="img/cake1.jpeg" width="100%" height="250px" alt="">
+                <h5 style="margin-top: 10px;font-family: 'Lato', sans-serif;">Pista Topped Rasmalai Cake</h5>
+                <span><b>₹ 699</b></span><br>
+                <div
+                    style="width: 20%;height: 25px;background-color: rgb(237, 236, 236);color: green;text-align: center;margin-top: 10px;">
+                    <span>4.9</span>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Web_flavour_div">
+        <h1 style="padding: 30px 10%;   font-family: 'Lato', sans-serif;">Experience Floavours</h1>
+        <div class="flours_Mean_div">
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Chocalate</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Fruits</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Red velvet</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Mango</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Blackforest</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Pineapple</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Butterscotch</p>
+            </div>
+            <div class="flours_div_box">
+                <p style="margin-left: 25%;margin-top: 15px;">Kit Kat</p>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+    <div class="text_but">
+        <h1 class="Surprise_text">Trending Cakes</h1>
+        <button class="viewall_btn">View All</button>
+    </div>
+    <div class="mob_text_but">
+        <h3 class="our_text">Trending Cakes</h3>
+        <button class="viewall_btn">View All</button>
+    </div>
+<br><br>
+
+
+    <div class="mean_trend_webdiv1">
+        <div class="trend_div">
+            <img class="trend_img" src="img/cake6.webp" alt="">
+            <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: small;">Photo
+                Pulling Cakes</p>
+        </div>
+        <div class="trend_div">
+            <img class="trend_img" src="img/cake7.webp" alt="">
+            <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: small;">Pinata
+                Cakes</p>
+        </div>
+        <div class="trend_div">
+            <img class="trend_img" src="img/cake8.webp" alt="">
+            <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: small;">Pull Me Up
+                Cakes</p>
+        </div>
+        <br>
+        <div class="mean_trend_webdiv2">
+            <div class="trend_div2">
+                <img class="trend_img" src="img/cake9.webp" alt="">
+                <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: small;">Bomb Cakes</p>
+            </div>
+            <div class="trend_div2">
+                <img class="trend_img" src="img/cake10.webp" alt="">
+                <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: small;">Cake Surprise Box</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mean_trend_mobdiv1">
+        <div class="trend_mob_div">
+            <img class="trend_img" width="100%" src="img/cake6.webp" alt="">
+            <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: small;">Photo
+                Pulling Cakes</p>
+        </div>
+        <div class="trend_mob_div">
+            <img class="trend_img" width="100%" src="img/cake7.webp" alt="">
+            <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: small;">Pinata
+                Cakes</p>
+        </div>
+        <div class="trend_mob_div">
+            <img class="trend_img" width="100%" src="img/cake8.webp" alt="">
+            <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: small;">Pull Me Up
+                Cakes</p>
+        </div>
+        <div class="trend_mob_div">
+            <img class="trend_img" width="100%" height="160px" src="img/cake9.webp" alt="">
+            <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: small;">Bomb Cakes</p>
+        </div>
+  </div>
+
+  <div class="trend_mob_Surprise">
+    <img class="trend_img" width="340px" src="img/cake10.webp" alt="">
+    <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: small;">Cake Surprise Box</p>
+</div>
+
+
+
+<div class="text_but">
+    <h1 class="Surprise_text">Designer Cakes</h1>
+    <button class="viewall_btn">View All</button>
+</div>
+<div class="mob_text_but_mob">
+    <h3 class="our_text">Designer Cakes</h3>
+    <button class="viewall_btn">View All</button>
+</div>
+
+<div class="designer_div_web">
+
+    <div class="designer_cakebox">
+        <img class="designer_img" src="https://bkmedia.bakingo.com/barbie_cake_desktop.jpg?tr=w-484,dpr-1.5,q-70" height="350px" width="100%" alt="">
+        <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: 14px;">Barbie Cakes</p>
+
+    </div>
+    <div class="designer_cakebox">
+        <img class="designer_img" src="https://bkmedia.bakingo.com/cartoon_cakes_desktop.jpg?tr=w-484,dpr-1.5,q-70" height="350px" width="100%" alt="">
+        <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: 14px;">Cartoon Cakes</p>
+
+    </div>
+    <div class="designer_cakebox">
+        <img class="designer_img" src="https://bkmedia.bakingo.com/number_cake_desktop.jpg?tr=w-484,dpr-1.5,q-70" height="350px" width="100%" alt="">
+        <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: 14px;">Number Cakes</p>
+
+    </div>
+    <div class="designer_cakebox">
+        <img class="designer_img" src="https://bkmedia.bakingo.com/rainbow_cakes_desktop.jpg?tr=w-484,dpr-1.5,q-70" height="350px" width="100%" alt="">
+        <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: 14px;">RainbowCakes</p>
+
+    </div>
+    <div class="designer_cakebox">
+        <img class="designer_img" src="https://bkmedia.bakingo.com/jungle_theme_cake_desktop.jpg?tr=w-484,dpr-1.5,q-70" height="350px" width="100%" alt="">
+        <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: 14px;">Jngle Theme Cakes</p>
+
+    </div>
+    <div class="designer_cakebox">
+        <img class="designer_img" src="https://bkmedia.bakingo.com/baby_shower_cake_desktop.jpg?tr=w-484,dpr-1.5,q-70" height="350px" width="100%" alt="">
+        <p style=" font-family: 'Lato', sans-serif;text-align: center;font-weight: 600;font-size: 14px;">Baby Shower Cakes</p>
+
+    </div>
+</div>
+
+
+
+<div class="contact_div">
+    <div class="contact_img">
+        <img width="80%" height="600px" src="https://images.pexels.com/photos/4109997/pexels-photo-4109997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+    </div>
+    <div class="contact">
+       <p style="font-size: 30px;"><b>....Seeking for something Special and customized ?</b></p> <br>
+      <form action="">
+        <label for="">huu</label>
+        <input type="text">
+      </form>
+       
+   
+    </div>
+
+</div>
+
+<input type="text">
+</body>
+
+</html>
